@@ -1,23 +1,28 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+//import { Button } from 'bootstrap';
 import './App.css';
+import { useState } from 'react';
+import btnModule from "./Button.module.css";
 
 function App() {
+
+  let [pState, setState] = useState(false);
+  
   return (
+
+   
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <br/>
+      <br/>
+      <input type={pState ? 'text' : 'password'}/>
+      <button onClick={()=>setState(!pState)}>
+        {pState ? 'Hide' : 'Show'}
+      </button>
+      <br/>
+      <br/>
+ 
+      <button className={btnModule.error} >Error</button> 
+      <button className={btnModule.warning} >Demo</button> 
     </div>
   );
 }
